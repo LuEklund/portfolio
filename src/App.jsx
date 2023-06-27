@@ -2,6 +2,7 @@ import Contact from "../../portfolio/src/componets/Contact"
 import Hero from "../../portfolio/src/componets/Hero"
 import Who from "../../portfolio/src/componets/Who"
 import Works from "../../portfolio/src/componets/Works"
+import Test from "../../portfolio/src/componets/Test"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -25,6 +26,7 @@ function App() {
       <Who/>
       <Works/>
       <Contact/>
+      <Test/>
     </Container>
   )
 }

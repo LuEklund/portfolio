@@ -71,14 +71,12 @@ const ListItem = styled.li`
           width: 100%;
         }
       }
-      color: pink;
     }
   }
 `;
 
 const Right = styled.div`
     flex: 1;
-
 `;
 
 const Works = () => {
@@ -88,7 +86,9 @@ const Works = () => {
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item} text={item}> {item}</ListItem>
+              <ListItem key={item} text={item}>
+                {item}
+              </ListItem>
             ))}
           </List>
         </Left>
@@ -98,4 +98,4 @@ const Works = () => {
   );
 };
 
-export default Works
+export default Works;
