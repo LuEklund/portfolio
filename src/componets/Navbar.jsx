@@ -8,16 +8,54 @@ const Section = styled.div`
   `;
 
 const Container = styled.div`
-    width: 140px;
-    background-color: rebeccapurple;
+    width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+    /* background-color: rebeccapurple; */
   `;
-const Links = styled.div``;
-const Logo = styled.img``;
-const List = styled.ul``;
-const ListItem = styled.li``;
-const Icon = styled.img``;
-const Icons = styled.div``;
-const Button = styled.button``;
+
+const Links = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 50px;
+`;
+
+const Logo = styled.img`
+  height: 50px;
+`;
+
+const List = styled.ul`
+  display: flex;
+  gap: 20px;
+  list-style: none;
+`;
+
+const ListItem = styled.li`
+  cursor: pointer;
+`;
+
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const Icon = styled.img`
+  width: 20px;
+  cursor: pointer;
+`;
+
+const Button = styled.button`
+  width: 100px;
+  padding: 10px;
+  background-color: purple;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+`;
 
 const Navbar = () => {
   return (
@@ -34,7 +72,7 @@ const Navbar = () => {
             </Links>
             <Icons>
                 <Icon src="./img/search.png"/>
-                <button>Hire Now</button>
+                <Button>Hire Now</Button>
             </Icons>
         </Container>
     </Section>
