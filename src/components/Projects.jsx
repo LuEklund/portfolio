@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
 import Development from "./Development";
 import ProductDesign from "./ProductDesign";
-import WebDesign from "./WebDesign";
+import Cub3D from "./Cub3D";
 
 const data = [
-  "Web Design",
-  "Development",
-  "Illustration",
-  "Product Design",
-  "Social Media",
+  "Cub3D",
 ];
 
 const Section = styled.div`
@@ -94,10 +90,10 @@ const Right = styled.div`
   flex: 1;
 `;
 
-const Works = () => {
+const Projects = React.forwardRef((props, ref) => {
   const [work, setWork] = useState("Web Design");
   return (
-    <Section>
+    <Section ref={ref}>
       <Container>
         <Left>
           <List>
@@ -109,17 +105,17 @@ const Works = () => {
           </List>
         </Left>
         <Right>
-          {work === "Web Design" ? (
-            <WebDesign />
-          ) : work === "Development" ? (
-            <Development />
+          {work === "Cub3D" ? (
+            <Cub3D />
+          ) : work === "Cub3D" ? (
+            <Cub3D />
           ) : (
-            <ProductDesign />
+            <Cub3D />
           )}
         </Right>
       </Container>
     </Section>
   );
-};
+});
 
-export default Works;
+export default Projects;

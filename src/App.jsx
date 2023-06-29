@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import Contact from "./components/Contact";
 import Hero from "./components/Hero";
-import Who from "./components/Who";
-import Works from "./components/Works";
+import Tech from "./components/Tech";
+import Projects from "./components/Projects";
+import { useRef } from "react";
 
 const Container = styled.div`
   height: 100vh;
@@ -11,19 +12,32 @@ const Container = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
   color: white;
-  background: url("./img/bg.jpeg");
+  background: url("./img/bg1.jpg");
   &::-webkit-scrollbar{
     display: none;
   }
 `;
 
 function App() {
+  const techRef = useRef(null);
+  const projectRef = useRef(null);
+  const contactRef = useRef(null);
+  const handleScrollToElement = (section) => {
+    {section === "tech" ? (
+      techRef.current?.scrollIntoView({ behavior: 'smooth' })
+    ) : section === "project" ? (
+      projectRef.current?.scrollIntoView({ behavior: 'smooth' })
+    ) : (
+      contactRef.current?.scrollIntoView({ behavior: 'smooth' })
+    )}
+    
+  };
   return (
     <Container>
-      <Hero />
-      <Who />
-      <Works />
-      <Contact />
+      <Hero onScrollToElementClick={handleScrollToElement}/>
+      <Tech ref={techRef}/>
+      <Projects ref={projectRef}/>
+      <Contact ref={contactRef}/>
     </Container>
   );
 }

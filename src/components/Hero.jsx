@@ -64,12 +64,12 @@ const Line = styled.img`
 `;
 
 const Subtitle = styled.h2`
-  color: #da4ea2;
+  color: white;
 `;
 
 const Desc = styled.p`
   font-size: 24px;
-  color: lightgray;
+  color: white;
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
@@ -86,6 +86,11 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
 `;
+{/* <Button>Learn More</Button>  */}
+
+//Light: #377AC8
+//medium: #8537C8
+//Dark: #3C37C8
 
 const Right = styled.div`
   flex: 3;
@@ -121,10 +126,10 @@ const Img = styled.img`
   }
 `;
 
-const Hero = () => {
+const Hero = ({ onScrollToElementClick }) => {
   return (
     <Section>
-      <Navbar />
+      <Navbar onScrollToElementClick={onScrollToElementClick}/>
       <Container>
         <Left>
           <Title>Lucas Eklund</Title>
@@ -133,9 +138,10 @@ const Hero = () => {
             <Subtitle>About me and page</Subtitle>
           </WhatWeDo>
           <Desc>
-            Hello and welcome to my portfolio here are some short info about me
+          Welcome to my profile page. Here I will display some of my projects. And some information about me.
+          <br/><br/>
+          I’m 21 years old and currently studying at Hive Helsinki to become a better programmer and develop my social and teamworking skills in order to improve my personal growth. I enjoy coding and going to the gym in my free time. I also like to read informative books to expand my general knowledge.
           </Desc>
-          <Button>Learn More</Button>
         </Left>
         <Right>
           <Canvas>
@@ -145,7 +151,7 @@ const Hero = () => {
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>
                 <MeshDistortMaterial
-                  color="#3d1c56"
+                  color="#2b4ff0"
                   attach="material"
                   distort={0.5}
                   speed={2}

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { forwardRef, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 import Map from "./Map";
@@ -56,7 +56,7 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-  background-color: #da4ea2;
+  background-color: #2b4ff0;
   color: white;
   border: none;
   font-weight: bold;
@@ -73,8 +73,8 @@ const Right = styled.div`
   }
 `;
 
-const Contact = () => {
-  const ref = useRef();
+const Contact = forwardRef((props, ref) => {
+  const refForm = useRef();
   const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
@@ -84,7 +84,7 @@ const Contact = () => {
       .sendForm(
         "service_eodma6e",
         "template_3pmhzlj",
-        ref.current,
+        refForm.current,
         "JQtHLi7skO3LMlb14"
       )
       .then(
@@ -99,11 +99,11 @@ const Contact = () => {
       );
   };
   return (
-    <Section>
+    <Section ref={ref}>
       <Container>
         <Left>
-          <Form ref={ref} onSubmit={handleSubmit}>
-            <Title>Contact Us</Title>
+          <Form ref={refForm} onSubmit={handleSubmit}>
+            <Title>Contact Me</Title>
             <Input placeholder="Name" name="name" />
             <Input placeholder="Email" name="email" />
             <TextArea
@@ -122,6 +122,6 @@ const Contact = () => {
       </Container>
     </Section>
   );
-};
+});
 
 export default Contact;

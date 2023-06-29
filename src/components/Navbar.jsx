@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import Contact from "./Contact";
 
 const Section = styled.div`
   display: flex;
@@ -54,37 +55,38 @@ const Icons = styled.div`
 `;
 
 const Icon = styled.img`
-  width: 20px;
+  width: 50px;
   cursor: pointer;
 `;
 
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #da4ea2;
+  background-color: #2b4ff0;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 `;
 
-const Navbar = () => {
+const Navbar = ({ onScrollToElementClick }) => {
+
   return (
     <Section>
       <Container>
         <Links>
           <Logo src="./img/logo.png" />
           <List>
-            <ListItem>Home</ListItem>
-            <ListItem>Studio</ListItem>
-            <ListItem>Works</ListItem>
-            <ListItem>Contact</ListItem>
+            <ListItem><Button onClick={() => onScrollToElementClick("tech")}>Tech</Button></ListItem>
+            <ListItem><Button onClick={() => onScrollToElementClick("project")}>Projects</Button></ListItem>
+            <ListItem><Button onClick={onScrollToElementClick}>Contact</Button></ListItem>
           </List>
         </Links>
         <Icons>
-          {/* Changed the image due to copyright problems */}
-          <Icon src="./img/search.png" />
-          <Button>Hire Now</Button>
+          <a target="_blank" href="https://github.com/LuEklund"><Icon src="./img/github.png" /></a>
+          <a target="_blank" href="https://www.linkedin.com/in/lucas-eklund/"><Icon src="./img/linkedin.png" /></a>
+          <a target="_blank" href="https://www.instagram.com/lucas.eklund/"><Icon src="./img/instagram.png" /></a>
+          <a target="_blank" href="https://fi-fi.facebook.com/people/Lucas-Eklund/pfbid0q92KQApT7UmQWrzB5vNs4LUzauAqsRHaWGWQZZZ59nhMd2FtEAYYo89VSFogdzPHl/"><Icon src="./img/facebook.png" /></a>
         </Icons>
       </Container>
     </Section>
