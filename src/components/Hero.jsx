@@ -15,6 +15,9 @@ const Section = styled.div`
   @media only screen and (max-width: 768px) {
     height: 200vh;
   }
+  @media only screen and (max-width: 1400px) {
+    height: 150vh;
+  }
 `;
 
 const Container = styled.div`
@@ -24,7 +27,7 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -39,16 +42,24 @@ const Left = styled.div`
   justify-content: center;
   gap: 20px;
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     flex: 1;
     align-items: center;
   }
 `;
 
+const DesignDiv = styled.div`
+  flex-direction: column;
+  gap: 20px;
+  background-color: black;
+  display: flex;
+  padding: 20px;
+  border-radius: 10px;
+`;
+
 const Title = styled.h1`
   font-size: 74px;
-
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     text-align: center;
   }
 `;
@@ -61,16 +72,22 @@ const WhatWeDo = styled.div`
 
 const Line = styled.img`
   height: 5px;
+  @media only screen and (max-width: 1400px) {
+    display: none;
+  }
 `;
 
 const Subtitle = styled.h2`
   color: white;
+  @media only screen and (max-width: 1400px) {
+    margin: 0 auto;
+  }
 `;
 
 const Desc = styled.p`
   font-size: 24px;
   color: white;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     padding: 20px;
     text-align: center;
   }
@@ -95,7 +112,7 @@ const Button = styled.button`
 const Right = styled.div`
   flex: 3;
   position: relative;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     flex: 1;
     width: 100%;
   }
@@ -114,11 +131,15 @@ const Img = styled.img`
   border-radius: 100%;
   animation: animate 2s infinite ease alternate;
 
+  
+  @media only screen and (max-width: 1400px) {
+    width: 450px;
+    height: 450px;
+  }
   @media only screen and (max-width: 768px) {
     width: 300px;
     height: 300px;
   }
-
   @keyframes animate {
     to {
       transform: translateY(20px);
@@ -132,21 +153,22 @@ const Hero = ({ onScrollToElementClick }) => {
       <Navbar onScrollToElementClick={onScrollToElementClick}/>
       <Container>
         <Left>
+          <DesignDiv>
           <Title>Lucas Eklund</Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
-            <Subtitle>About me and page</Subtitle>
+            <Subtitle>About me and the page</Subtitle>
           </WhatWeDo>
           <Desc>
-          Welcome to my profile page. Here I will display some of my projects. And some information about me.
+          Welcome to my portfolio page. Here I will display some of my projects. And some information about me.
           <br/><br/>
-          I’m 21 years old and currently studying at Hive Helsinki to become a better programmer and develop my social and teamworking skills in order to improve my personal growth. I enjoy coding and going to the gym in my free time. I also like to read informative books to expand my general knowledge.
+          I’m 21 years old and currently studying at Hive Helsinki. I enjoy coding and going to the gym in my free time. I also like to read informative books.
           </Desc>
+          </DesignDiv>
         </Left>
         <Right>
           <Canvas>
             <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
               <ambientLight intensity={1} />
               <directionalLight position={[3, 2, 1]} />
               <Sphere args={[1, 100, 200]} scale={2.4}>

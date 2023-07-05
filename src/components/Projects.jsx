@@ -1,11 +1,11 @@
 import React, { forwardRef, useState } from "react";
 import styled from "styled-components";
-import Development from "./Development";
-import ProductDesign from "./ProductDesign";
 import Cub3D from "./Cub3D";
+import Portfolio from "./Portfolio";
 
 const data = [
   "Cub3D",
+  "Portfolio",
 ];
 
 const Section = styled.div`
@@ -23,8 +23,7 @@ const Container = styled.div`
   width: 1400px;
   display: flex;
   justify-content: space-between;
-
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1400px) {
     width: 100%;
     flex-direction: column;
   }
@@ -34,9 +33,7 @@ const Left = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-
-  @media only screen and (max-width: 768px) {
-    padding: 20px;
+  @media only screen and (max-width: 1400px) {
     justify-content: center;
   }
 `;
@@ -56,10 +53,13 @@ const ListItem = styled.li`
   -webkit-text-stroke: 1px white;
   position: relative;
 
-  @media only screen and (max-width: 768px) {
-    font-size: 24px;
+  @media only screen and (max-width: 1400px) {
+    font-size: 50px;
     color: white;
     -webkit-text-stroke: 0px;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 24px;
   }
 
   ::after {
@@ -91,7 +91,7 @@ const Right = styled.div`
 `;
 
 const Projects = React.forwardRef((props, ref) => {
-  const [work, setWork] = useState("Web Design");
+  const [work, setWork] = useState("Cub3D");
   return (
     <Section ref={ref}>
       <Container>
@@ -107,8 +107,8 @@ const Projects = React.forwardRef((props, ref) => {
         <Right>
           {work === "Cub3D" ? (
             <Cub3D />
-          ) : work === "Cub3D" ? (
-            <Cub3D />
+          ) : work === "Portfolio" ? (
+            <Portfolio />
           ) : (
             <Cub3D />
           )}

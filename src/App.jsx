@@ -3,6 +3,7 @@ import Contact from "./components/Contact";
 import Hero from "./components/Hero";
 import Tech from "./components/Tech";
 import Projects from "./components/Projects";
+import React, { forwardRef } from "react";
 import { useRef } from "react";
 
 const Container = styled.div`

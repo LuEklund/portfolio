@@ -6,6 +6,10 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
 
+
+  @media only screen and (max-width: 1400px) {
+    width: 100%;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
   }
@@ -18,11 +22,15 @@ const Container = styled.div`
   align-items: center;
   padding: 10px 0px;
 
+  @media only screen and (max-width: 1400px) {
+    width: 100%;
+    padding: 10px;
+  }
   @media only screen and (max-width: 768px) {
     width: 100%;
     padding: 10px;
   }
-`;
+  `;
 
 const Links = styled.div`
   display: flex;
@@ -62,11 +70,13 @@ const Icon = styled.img`
 const Button = styled.button`
   width: 100px;
   padding: 10px;
-  background-color: #2b4ff0;
-  color: white;
+  background-color: white;
+  color: #67a9ff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
 `;
 
 const Navbar = ({ onScrollToElementClick }) => {
