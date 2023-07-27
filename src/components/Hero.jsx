@@ -162,7 +162,7 @@ const Hero = ({ onScrollToElementClick }) => {
           <Desc>
           Welcome to my portfolio page. Here I will display some of my projects. And some information about me.
           <br/><br/>
-          I’m 21 years old and currently studying at Hive Helsinki. I enjoy coding and going to the gym in my free time. I also like to read informative books.
+          I’m currently studying at Hive Helsinki. I enjoy coding and going to the gym in my free time. I also like to read informative books.
           </Desc>
           </DesignDiv>
         </Left>
